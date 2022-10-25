@@ -13,10 +13,14 @@
     "deploy:sit": "export $(grep -v '^#' .sit.env | xargs -d '\n') && npm run deploy:run:readpwd",
     "deploy:uat": "export $(grep -v '^#' .uat.env | xargs -d '\n') && npm run deploy:run:readpwd",
     "deploy:prod": "export $(grep -v '^#' .prod.env | xargs -d '\n') && npm run deploy:run:readpwd",
+    "deploy:manual": "npm run deploy:run:readpwd",
     "clean:rm": "rm -rf node_modules && rm package-lock.json || true",
     "clean": "npm run clean:rm && npm install",
-    "build": "rm -rf lib && tsc -p src",
-    "prepare": "npm run build"
+    "build:rm": "rm -rf lib",
+    "build:compile": "tsc -p src",
+    "build:run": "./build-image.sh",
+    "build:run:prepare": "export IMAGE=${npm_package_name//@//} VERSION=$npm_package_version && npm run build:run",
+    "build": "npm run build:run:prepare"
   },
   "repository": {
     "type": "git",
@@ -30,7 +34,8 @@
   "dependencies": {
     "@ldb/db-common": "1.1.5",
     "@ldb/luminet-connection-strings": "0.0.5",
-    "@ldb/mongobi-helper": "0.0.8"
+    "@ldb/mongobi-helper": "0.0.8",
+    "ts-node": "10.9.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.2",
