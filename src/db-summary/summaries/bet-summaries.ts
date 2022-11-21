@@ -3,6 +3,7 @@ import Columns from '../../common/columns';
 import { columnsBase, pipelineBase } from '../templates/summary-base';
 
 const postfix = 'summaries';
+const players = 'players';
 
 /** round */
 const Round = new BITable({
@@ -36,11 +37,21 @@ const Daily = new BITable({
     ...columnsBase.betSummary,
   }) as BIColumn[],
 });
+const DailyPlayers = new BITable({
+  mongo_name: `daily_${postfix}`,
+  sql_name  : `daily_${players}`,
+  pipeline  : [
+    ...pipelineBase.betPlayers,
+  ],
+  columns   : Object.values({
+    ...columnsBase.betPlayers,
+  }) as BIColumn[],
+});
 
 /** hourly */
 const Hourly = new BITable({
-  mongo_name: `daily_${postfix}`,
-  sql_name  : `daily_${postfix}`,
+  mongo_name: `hourly_${postfix}`,
+  sql_name  : `hourly_${postfix}`,
   pipeline  : [
     { $project: {
       _id: 0,
@@ -51,6 +62,16 @@ const Hourly = new BITable({
     ...columnsBase.betSummary,
   }) as BIColumn[],
 });
+const HourlyPlayers = new BITable({
+  mongo_name: `hourly_${postfix}`,
+  sql_name  : `hourly_${players}`,
+  pipeline  : [
+    ...pipelineBase.betPlayers,
+  ],
+  columns   : Object.values({
+    ...columnsBase.betPlayers,
+  }) as BIColumn[],
+});
 
-const betSummariesTables = [Round, Daily, Hourly];
+const betSummariesTables = [Round, Daily, DailyPlayers, Hourly, HourlyPlayers];
 export default betSummariesTables;

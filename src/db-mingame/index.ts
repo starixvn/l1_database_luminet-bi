@@ -49,6 +49,7 @@ import minisedie2Tables          from './games/56-O-minisedie2';
 import minisedie3Tables          from './games/57-O-minisedie3';
 import minisedie4Tables          from './games/58-O-minisedie4';
 import fruitslotTables           from './games/59-I-fruitslot';
+import fantanTables              from './games/60-P-fantan';
 
 export const minigameDB = new BIDatabase({
   name  : 'minigame',
@@ -103,6 +104,7 @@ export const minigameDB = new BIDatabase({
     ...minisedie3Tables,
     ...minisedie4Tables,
     ...fruitslotTables,
+    ...fantanTables,
   ],
 });
 

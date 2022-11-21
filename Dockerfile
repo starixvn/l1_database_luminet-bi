@@ -2,10 +2,11 @@ FROM hub.lumigame.com/docker-hub/library/node:18.10-slim
 ARG NPM_TOKEN
 ENV NODE_ENV production
 WORKDIR /app
-COPY package.json ./
+COPY package.build.json ./package.json
 COPY .npmrc ./
 RUN npm install --omit=dev
-COPY src src
 COPY .*.env ./
+COPY src src
+COPY package.json ./package.json
 ENTRYPOINT [ "npm", "run" ]
 CMD [ "env" ]

@@ -1,6 +1,6 @@
 {
   "name": "@ldb/luminet-bi",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "Luminet System BI Definition",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -38,10 +38,10 @@
     "ts-node": "10.9.1"
   },
   "devDependencies": {
-    "@types/node": "^18.11.2",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
-    "eslint": "^8.25.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "typescript": "^4.8.4"
   }
