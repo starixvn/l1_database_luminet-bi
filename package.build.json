@@ -1,0 +1,9 @@
+{
+  "name": "@ldb/luminet-bi",
+  "dependencies": {
+    "@ldb/db-common": "1.1.5",
+    "@ldb/luminet-connection-strings": "0.0.5",
+    "@ldb/mongobi-helper": "0.0.8",
+    "ts-node": "10.9.1"
+  }
+}

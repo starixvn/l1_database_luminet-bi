@@ -1,0 +1,48 @@
+{
+  "name": "@ldb/luminet-bi",
+  "version": "0.0.10",
+  "description": "Luminet System BI Definition",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "repl:run": "ts-node --experimentalSpecifierResolution=node --transpileOnly --interactive",
+    "repl": "export $(grep -v '^#' .env | xargs -d '\n') && npm run repl:run",
+    "deploy:run": "ts-node --experimentalSpecifierResolution=node --transpileOnly src/index.ts",
+    "deploy:run:readpwd": "printf 'Enter password: ' && read -s SRV_PASSWORD && export SRV_PASSWORD && echo && npm run deploy:run",
+    "deploy:local": "export $(grep -v '^#' .local.env | xargs -d '\n') && npm run deploy:run:readpwd",
+    "deploy:sit": "export $(grep -v '^#' .sit.env | xargs -d '\n') && npm run deploy:run:readpwd",
+    "deploy:uat": "export $(grep -v '^#' .uat.env | xargs -d '\n') && npm run deploy:run:readpwd",
+    "deploy:prod": "export $(grep -v '^#' .prod.env | xargs -d '\n') && npm run deploy:run:readpwd",
+    "deploy:manual": "npm run deploy:run:readpwd",
+    "clean:rm": "rm -rf node_modules && rm package-lock.json || true",
+    "clean": "npm run clean:rm && npm install",
+    "build:rm": "rm -rf lib",
+    "build:compile": "tsc -p src",
+    "build:run": "./build-image.sh",
+    "build:run:prepare": "export IMAGE=${npm_package_name//@//} VERSION=$npm_package_version && npm run build:run",
+    "build": "npm run build:run:prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git3.nexdev.net/l1/database/luminet-bi.git"
+  },
+  "author": {
+    "name": "Billy Bùi",
+    "email": "billy.bui@luminet.vn"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@ldb/db-common": "1.1.5",
+    "@ldb/luminet-connection-strings": "0.0.5",
+    "@ldb/mongobi-helper": "0.0.8",
+    "ts-node": "10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "typescript": "^4.9.4"
+  }
+}
