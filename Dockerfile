@@ -1,4 +1,4 @@
-FROM hub.lumigame.com/docker-hub/library/node:18.12-slim
+FROM hub.lumigame.com/docker-hub/library/node:18.14-slim
 ARG NPM_TOKEN
 ENV NODE_ENV production
 WORKDIR /app

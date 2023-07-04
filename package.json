@@ -1,14 +1,13 @@
 {
   "name": "@ldb/luminet-bi",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Luminet System BI Definition",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
   "scripts": {
-    "repl:run": "ts-node --experimentalSpecifierResolution=node --transpileOnly --interactive",
+    "repl:run": "ts-node-esm --experimentalSpecifierResolution=node --transpileOnly --interactive",
     "repl": "export $(grep -v '^#' .env | xargs -d '\n') && npm run repl:run",
-    "deploy:run": "ts-node --experimentalSpecifierResolution=node --transpileOnly src/index.ts",
+    "deploy:run": "ts-node-esm src/index.ts",
     "deploy:run:readpwd": "printf 'Enter password: ' && read -s SRV_PASSWORD && export SRV_PASSWORD && echo && npm run deploy:run",
     "deploy:local": "export $(grep -v '^#' .local.env | xargs -d '\n') && npm run deploy:run:readpwd",
     "deploy:sit": "export $(grep -v '^#' .sit.env | xargs -d '\n') && npm run deploy:run:readpwd",
