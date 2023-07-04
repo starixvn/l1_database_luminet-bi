@@ -43,7 +43,7 @@ const Bets = new BITable({
                 paylines: AggregateHelper.arrToJSON("$paylines"),
                 totalAmount: 1,
 
-                stake: "$totalAmount",
+                stake: { $multiply: ["$totalAmount", { $toInt: { $not: "$freeSpin" } }] },
                 payout: "$betWin",
             },
         },
