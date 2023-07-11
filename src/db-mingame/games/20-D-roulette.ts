@@ -38,7 +38,7 @@ const Bets = new BITable({
       stake       : '$totalAmount',
       payout      : '$betwin',
 
-      ...Object.fromEntries(options.map(o => [o, { $ifNull: [{ $reduce: { input: { $objectToArray: o }, initialValue: 0, in: { $add: ['$$value', '$$this.v'] } } }, 0] }])),
+      ...Object.fromEntries(options.map(o => [o, { $ifNull: [{ $reduce: { input: { $objectToArray: `$${o}` }, initialValue: 0, in: { $add: ['$$value', '$$this.v'] } } }, 0] }])),
     } },
   ],
   columns   : Object.values({
@@ -64,7 +64,7 @@ const BetLogs = new BITable({
       _id: 0,
       ...pipelineBase.gameBetLog,
 
-      ...Object.fromEntries(options.map(o => [o, { $ifNull: [{ $reduce: { input: { $objectToArray: o }, initialValue: 0, in: { $add: ['$$value', '$$this.v'] } } }, 0] }])),
+      ...Object.fromEntries(options.map(o => [o, { $ifNull: [{ $reduce: { input: { $objectToArray: `$${o}` }, initialValue: 0, in: { $add: ['$$value', '$$this.v'] } } }, 0] }])),
     } },
   ],
   columns   : Object.values({
