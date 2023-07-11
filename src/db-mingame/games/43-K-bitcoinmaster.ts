@@ -85,8 +85,8 @@ const BetLogs = new BITable({
       refund     : 1,
       win        : 1,
 
-      stake      : '$baseAmount',
-      payout     : '$baseBetWin',
+      stake      : '$amount',
+      payout     : '$betwin',
 
       ...Object.fromEntries(options.map(o => [o, { $cond: [{ $eq: ['$choice', o] }, '$amount', 0] }])),
     } },
