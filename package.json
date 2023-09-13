@@ -1,6 +1,6 @@
 {
   "name": "@ldb/luminet-bi",
-  "version": "0.0.16",
+  "version": "0.0.22",
   "description": "Luminet System BI Definition",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
