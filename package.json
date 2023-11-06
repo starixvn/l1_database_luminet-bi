@@ -1,9 +1,10 @@
 {
   "name": "@ldb/luminet-bi",
-  "version": "0.0.22",
+  "version": "0.0.25",
   "description": "Luminet System BI Definition",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "repl:run": "ts-node-esm --experimentalSpecifierResolution=node --transpileOnly --interactive",
     "repl": "export $(grep -v '^#' .env | xargs -d '\n') && npm run repl:run",
@@ -38,13 +39,13 @@
     "ts-node": "10.9.1"
   },
   "devDependencies": {
-    "@types/node": "^18.16.19",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint": "^8.44.0",
+    "@types/node": "^20.8.10",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.53.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-security": "^1.7.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   }
 }

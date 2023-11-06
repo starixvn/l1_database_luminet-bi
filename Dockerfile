@@ -1,4 +1,4 @@
-FROM hub.lumigame.com/docker-hub/library/node:18.14-slim
+FROM hub.lumigame.com/docker-hub/library/node:lts-slim
 ARG NPM_TOKEN
 ENV NODE_ENV production
 WORKDIR /app
@@ -7,6 +7,6 @@ COPY .npmrc ./
 RUN npm install --omit=dev
 COPY .*.env ./
 COPY src src
-COPY package.json ./package.json
+COPY package.json tsconfig.json tsconfig.base.json ./
 ENTRYPOINT [ "npm", "run" ]
 CMD [ "env" ]
