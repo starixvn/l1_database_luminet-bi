@@ -4,7 +4,7 @@ ENV NODE_ENV production
 WORKDIR /app
 COPY package.build.json ./package.json
 COPY .npmrc ./
-RUN npm install --omit=dev
+RUN npm install --install-strategy=nested --omit=dev
 COPY .*.env ./
 COPY src src
 COPY package.json tsconfig.json tsconfig.base.json ./

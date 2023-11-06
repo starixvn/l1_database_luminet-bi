@@ -6,7 +6,7 @@
         "sourceRoot": "/",
         "mapRoot": "/",
         "resolveJsonModule": true,
-        "moduleResolution": "bundler",
+        "moduleResolution": "Node",
         "strict": true,
         "alwaysStrict": true,
         "allowJs": false,
