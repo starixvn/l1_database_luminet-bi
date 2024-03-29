@@ -15,14 +15,14 @@ export const Columns = {
   NAME             : { mongo_name: 'name'             , sql_name: 'name'             , ...ColumnType.STR    } as BIColumn,
   OPERATORID       : { mongo_name: 'operatorId'       , sql_name: 'operatorId'       , ...ColumnType.STR    } as BIColumn,
   PAID             : { mongo_name: 'paid'             , sql_name: 'paid'             , ...ColumnType.BOOL   } as BIColumn,
-  PLAYERID         : { mongo_name: 'playerId'         , sql_name: 'playerId'         , ...ColumnType.INT64  } as BIColumn,
+  PLAYERID         : { mongo_name: 'playerId'         , sql_name: 'playerId'         , ...ColumnType.STR    } as BIColumn,
   ROUNDID          : { mongo_name: 'roundId'          , sql_name: 'roundId'          , ...ColumnType.INT64  } as BIColumn,
   SITEID           : { mongo_name: 'siteId'           , sql_name: 'siteId'           , ...ColumnType.STR    } as BIColumn,
   RATE             : { mongo_name: 'rate'             , sql_name: 'rate'             , ...ColumnType.FLOAT  } as BIColumn,
   SUMMARIZED       : { mongo_name: 'summarized'       , sql_name: 'summarized'       , ...ColumnType.BOOL   } as BIColumn,
   TIME             : { mongo_name: 'time'             , sql_name: 'time'             , ...ColumnType.DATE   } as BIColumn,
   UID              : { mongo_name: 'uid'              , sql_name: 'uid'              , ...ColumnType.STR    } as BIColumn,
-  
+
   AMOUNT           : { mongo_name: 'amount'           , sql_name: 'amount'           , ...ColumnType.FLOAT  } as BIColumn,
   BASEAMOUNT       : { mongo_name: 'baseAmount'       , sql_name: 'baseAmount'       , ...ColumnType.FLOAT  } as BIColumn,
   BASEBETWIN       : { mongo_name: 'baseBetWin'       , sql_name: 'baseBetWin'       , ...ColumnType.FLOAT  } as BIColumn,
