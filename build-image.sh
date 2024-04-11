@@ -1,7 +1,11 @@
 #!/bin/bash
 REGISTRY=hub.lumigame.com
-export $(grep -v '^#' .env.docker | xargs -d '\n')
-echo "$HUB_TOKEN" | docker login -u "$HUB_LOGIN" --password-stdin $REGISTRY
+if [ -f ".env.docker" ]; then
+  export $(grep -v '^#' .env.docker | xargs -d '\n')
+fi
+if [ -n "$HUB_TOKEN" ]; then
+  echo "$HUB_TOKEN" | docker login -u "$HUB_LOGIN" --password-stdin $REGISTRY
+fi
 
 docker pull $REGISTRY$IMAGE:latest || true
 docker build \
