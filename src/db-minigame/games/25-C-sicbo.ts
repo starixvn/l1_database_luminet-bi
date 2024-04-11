@@ -48,7 +48,7 @@ const Bets = new BITable({
     mongo_name: `${baseName}_ones`,
     sql_name: `${baseName}_bets`,
     pipeline: [
-        { $match: { playerId: { $gt: 0 } } },
+        { $match: { $or: [{ playerId: { $gt: 0 } }, { playerId: { $gt: "" } }] } },
         {
             $project: {
                 _id: 0,
@@ -82,7 +82,7 @@ const BetLogs = new BITable({
     mongo_name: `${baseName}_cuocs`,
     sql_name: `${baseName}_betlogs`,
     pipeline: [
-        { $match: { playerId: { $gt: 0 } } },
+        { $match: { $or: [{ playerId: { $gt: 0 } }, { playerId: { $gt: "" } }] } },
         {
             $project: {
                 _id: 0,
