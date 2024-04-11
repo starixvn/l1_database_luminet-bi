@@ -55,12 +55,12 @@ import fortunecatTables from "./games/62-F-fortunecat";
 import happyfishTables from "./games/63-F-happyfish";
 import magicforestTables from "./games/64-F-magicforest";
 import djclubTables from "./games/65-F-djclub";
-import candylandTables from "./games/66-M-candyland.js";
-import missionimpossibleTables from "./games/68-F-missionimpossible.js";
-import blackpinkTables from "./games/69-F-blackpink.js";
-import transformersTables from "./games/70-F-transformers.js";
-import onepieceTables from "./games/74-F-onepiece.js";
-import dragonballTables from "./games/76-F-dragonball.js";
+import candylandTables from "./games/66-M-candyland";
+import missionimpossibleTables from "./games/68-F-missionimpossible";
+import blackpinkTables from "./games/69-F-blackpink";
+import transformersTables from "./games/70-F-transformers";
+import onepieceTables from "./games/74-F-onepiece";
+import dragonballTables from "./games/76-F-dragonball";
 
 export const minigameDB = new BIDatabase({
     name: "minigame",
